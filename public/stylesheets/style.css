@@ -1,8 +1,85 @@
+
+/* please excuse the mess
+ * this file is being worked on by three different people
+ * bellydrum, squideon, and wacky280
+ * started August 2018 by bellydrum
+ * index should help you find everything
+ * please only add css
+ * please don't reorganize or change the structure
+ * otherwise pay me back for the adderall it took
+ */
+
+
+/****************** INDEX
+    * global                (sitewide style settings)
+    * headers               (top of page)
+    * footers               (bottom of page)
+    * page-specific assets  (elements unique to certain pages)
+    * bootstrap overrides   (for making changes to default bootstrap settings)
+    * responsive css        (for mobile-specific styles)
+******************/
+
+
+/****************** GLOBAL ******************/
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #eeeeee;
+  color: #555;  /* match bootstrap styles */
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* make text unselectable */
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/****************** HEADERS ******************/
+
+
+/****************** FOOTERS ******************/
+
+
+/****************** PAGE-SPECIFIC ASSETS ******************/
+
+
+/********* /<page name>/ *********/
+
+
+
+/****************** OVERRIDES ******************/
+
+
+/****************** RESPONSIVE CSS ******************/
+
+/* for iPads and large mobile devices */
+@media only screen and (max-width: 830px) {
+
+}
+
+/* pretty much for all mobile devices except iPads (large screens) */
+@media only screen and (max-width: 600px) {
+
+  /****************** GLOBAL ******************/
+
+
+  /****************** HEADERS ******************/
+
+
+  /****************** FOOTERS ******************/
+
+
+  /****************** PAGE-SPECIFIC ASSETS ******************/
+
+  /********* /<page name>/ *********/
+
+
+  /****************** OVERRIDES ******************/
+
 }

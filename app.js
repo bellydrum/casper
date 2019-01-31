@@ -17,13 +17,13 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 /** Create routers. */
 const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
 const langRouter = require('./routes/lang')
+const guideonRouter = require('./routes/guideon')
 
 /** Set up routers. */
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 app.use('/lang', langRouter)
+app.use('/guideon', guideonRouter)
 
 /** Set up views and view engine. */
 app.set('views', path.join(__dirname, 'views'))
