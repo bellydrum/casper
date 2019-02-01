@@ -6,8 +6,8 @@ if [ $PID ]
 then
     echo "Killing process $PID at port :3000."
 	kill $PID
-	./restartserver.sh
+	~/casper/utils/restartserver.sh
 else
 	echo "Restarting server."
-	eval "$(node $PWD/../bin/www > /dev/null &)"
+	eval "$(node ~/casper/bin/www > /dev/null &)"
 fi
