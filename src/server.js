@@ -11,7 +11,6 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
-const debug = require('debug')('casper:server')
 const http = require('http')
 const port = normalizePort(process.env.PORT || '3000')
 
@@ -116,5 +115,5 @@ function onListening() {
   const bind = typeof addr === 'string'
       ? 'pipe ' + addr
       : 'port ' + addr.port
-  debug('Listening on ' + bind)
+  console.log(`\nNow listening on port ${port}...`)
 }

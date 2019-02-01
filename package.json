@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/server.js",
-    "dev": "DEBUG=casper:* nodemon run start"
+    "build": "babel src —-out-dir dist",
+    "dev": "nodemon --exec babel-node src/server.js",
+    "start": "npm run build && node dist/server.js"
   },
+  "author": "bellydrum",
+  "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",
