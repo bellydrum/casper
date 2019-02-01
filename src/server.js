@@ -5,15 +5,18 @@
  */
 
 /** Import various tools. */
-const createError = require('http-errors')
-const express = require('express')
-const path = require('path')
-const cookieParser = require('cookie-parser')
-const logger = require('morgan')
+import createError from 'http-errors'
+import express from 'express'
+import path from 'path'
+import cookieParser from 'cookie-parser'
+import logger from 'morgan'
+import http from 'http'
 
-const http = require('http')
+import indexRouter from './routes/index'
+import langRouter from './routes/lang'
+import guideonRouter from './routes/guideon'
+
 const port = normalizePort(process.env.PORT || '3000')
-
 
 /** Create app object. */
 const app = express()
@@ -24,11 +27,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
-/** Create routers. */
-const indexRouter = require('./routes/index')
-const langRouter = require('./routes/lang')
-const guideonRouter = require('./routes/guideon')
 
 /** Set up routers. */
 app.use('/', indexRouter)
