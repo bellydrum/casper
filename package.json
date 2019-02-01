@@ -16,7 +16,7 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "http": "0.0.0",
     "nodemon": "^1.18.9",
-    "portastic": "^1.0.1"
   }
 }
