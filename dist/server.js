@@ -21,9 +21,12 @@ var _http = _interopRequireDefault(require("http"));
 
 var _router = _interopRequireDefault(require("./routes/router"));
 
+var _ServerHelper = _interopRequireDefault(require("./helpers/ServerHelper"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var port = normalizePort(process.env.PORT || '3000');
+var portVal = '3000';
+var s = new _ServerHelper.default(portVal);
 /** Create app object. */
 
 var app = (0, _express.default)();
@@ -60,61 +63,7 @@ app.use(function (err, req, res, next) {
 
 var server = _http.default.createServer(app);
 
-app.set('port', port);
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-/**
- * Helper functions.
- */
-
-/** Normalize a port into a number, string, or false. */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-/** Event listener for HTTP server "error" event. */
-
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port; // handle specific listen errors with friendly messages
-
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-
-    default:
-      throw error;
-  }
-}
-/** Event listener for HTTP server "listening" event. */
-
-
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-  console.log("\nNow listening on port ".concat(port, "..."));
-}
+app.set('port', s.port);
+server.listen(s.port);
+server.on('error', _ServerHelper.default.onError);
+server.on('listening', _ServerHelper.default.onListening);

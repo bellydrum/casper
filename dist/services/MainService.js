@@ -5,31 +5,34 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _MainService = _interopRequireDefault(require("../services/MainService"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var MainController =
+var MainService =
 /*#__PURE__*/
 function () {
-  function MainController() {
-    _classCallCheck(this, MainController);
+  function MainService() {
+    _classCallCheck(this, MainService);
   }
 
-  _createClass(MainController, null, [{
+  _createClass(MainService, null, [{
     key: "greet",
+
+    /**
+     *
+     * @param req
+     * @param res
+     * @about returns a temporary greeting
+     */
     value: function greet(req, res) {
-      return _MainService.default.greet(req, res);
+      res.send("Hey from bellydrum! /swagger page coming soon.");
     }
   }]);
 
-  return MainController;
+  return MainService;
 }();
 
-exports.default = MainController;
+exports.default = MainService;
