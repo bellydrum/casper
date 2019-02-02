@@ -2,7 +2,7 @@
 
 PID="$(lsof -t -i :3000)"
 
-if [ $PID ]
+if [[ $PID ]]
 then
     echo "Killing process $PID at port :3000."
 	kill $PID

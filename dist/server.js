@@ -19,11 +19,7 @@ var _morgan = _interopRequireDefault(require("morgan"));
 
 var _http = _interopRequireDefault(require("http"));
 
-var _index = _interopRequireDefault(require("./routes/index"));
-
-var _lang = _interopRequireDefault(require("./routes/lang"));
-
-var _guideon = _interopRequireDefault(require("./routes/guideon"));
+var _router = _interopRequireDefault(require("./routes/router"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42,9 +38,7 @@ app.use((0, _cookieParser.default)());
 app.use(_express.default.static(_path.default.join(__dirname, 'public')));
 /** Set up routers. */
 
-app.use('/', _index.default);
-app.use('/lang', _lang.default);
-app.use('/guideon', _guideon.default);
+app.use('/', _router.default);
 /** Set up views and view engine. */
 
 app.set('views', _path.default.join(__dirname, 'views'));

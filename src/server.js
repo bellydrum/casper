@@ -11,10 +11,7 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import http from 'http'
-
-import indexRouter from './routes/index'
-import langRouter from './routes/lang'
-import guideonRouter from './routes/guideon'
+import router from './routes/router'
 
 const port = normalizePort(process.env.PORT || '3000')
 
@@ -29,9 +26,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 /** Set up routers. */
-app.use('/', indexRouter)
-app.use('/lang', langRouter)
-app.use('/guideon', guideonRouter)
+app.use('/', router)
 
 /** Set up views and view engine. */
 app.set('views', path.join(__dirname, 'views'))
