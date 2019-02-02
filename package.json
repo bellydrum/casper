@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "babel src/ -d dist",
+    "build": "babel ~/casper/src -d ~/casper/dist",
     "dev": "nodemon --exec babel-node src/server.js",
-    "start": "npm run build && node dist/server.js"
+    "start": "babel ~/casper/src/ -d ~/casper/dist && node ~/casper/dist/server.js"
   },
   "author": "bellydrum",
   "license": "ISC",
