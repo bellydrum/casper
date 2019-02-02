@@ -9,5 +9,5 @@ then
 	~/casper/utils/restartserver.sh
 else
 	echo "Restarting server."
-	eval "$(node ~/casper/bin/www > /dev/null &)"
+	eval "$(npm start > /dev/null &)"
 fi
