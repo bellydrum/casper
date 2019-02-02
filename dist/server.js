@@ -21,14 +21,11 @@ var _http = _interopRequireDefault(require("http"));
 
 var _router = _interopRequireDefault(require("./routes/router"));
 
-var _ServerHelper = _interopRequireDefault(require("./helpers/ServerHelper"));
+var _ServerHelper = require("./helpers/ServerHelper");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var portVal = '3000';
-var s = new _ServerHelper.default(portVal);
 /** Create app object. */
-
 var app = (0, _express.default)();
 /** Set up various tools. */
 
@@ -63,7 +60,7 @@ app.use(function (err, req, res, next) {
 
 var server = _http.default.createServer(app);
 
-app.set('port', s.port);
-server.listen(s.port);
-server.on('error', _ServerHelper.default.onError);
-server.on('listening', _ServerHelper.default.onListening);
+app.set('port', _ServerHelper.port);
+server.listen(_ServerHelper.port); // server.on('error', ServerHelper.onError)
+
+server.on('listening', _ServerHelper.ServerHelper.onListening);
