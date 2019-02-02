@@ -8,6 +8,9 @@ then
 	kill $PID
 	~/casper/utils/restartserver.sh
 else
-	echo "Restarting server."
-	eval "$(npm start > /dev/null &)"
+    echo "Restarting server. Please wait while the source code compiles..."
+	~/casper/node_modules/.bin/babel ~/casper/src -d ~/casper/dist
+    wait
+    echo "Server now listening on port 3000!"
+    node ~/casper/dist/server.js > /dev/null &
 fi
