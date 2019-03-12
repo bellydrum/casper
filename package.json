@@ -5,7 +5,7 @@
   "scripts": {
     "build": "babel ~/development/casper/src -d ~/development/casper/dist",
     "dev": "nodemon --exec babel-node src/server.js",
-    "start": "babel ~/development/casper/src/ -d ~/development/casper/dist && node ~/development/asper/dist/server.js"
+    "start": "~/development/casper/start.sh"
   },
   "author": "bellydrum",
   "license": "ISC",
