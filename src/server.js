@@ -25,6 +25,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 /** Set up routers. */
+app.use('', router)
 app.use('/', router)
 
 /** Set up views and view engine. */

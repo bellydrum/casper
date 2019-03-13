@@ -38,6 +38,7 @@ app.use((0, _cookieParser.default)());
 app.use(_express.default.static(_path.default.join(__dirname, 'public')));
 /** Set up routers. */
 
+app.use('', _router.default);
 app.use('/', _router.default);
 /** Set up views and view engine. */
 
